@@ -1,57 +1,71 @@
 html {
-  font-size: 20px;
-  font-family: 'MicroSoft YaHei'
-}
-
-div {
-  margin: 0px;
-  padding: 0px;
+  width: 100%;
+  height: 100%;
+  font-family: "MicroSoft YaHei"
 }
 
 .picker {
-  height: 15rem;
-  border: 2px solid red;
+  border: 1px solid red;
+  height: 200px;
   position: relative;
+  top: 100px;
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  top: 200px;
-}
-
-
-/*需要动态设置宽度*/
-
-.col {
-  position: relative;
-  /*width: 30%;*/
 }
 
 .mask {
-  width: 100%;
-  height: 15rem;
   position: absolute;
-  z-index: 3;
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
-  background-position: top, bottom;
-  background-repeat: no-repeat;
-  background-size: 100% 6.75rem;
+  width: 100%;
+  height: 200px;
+  z-index: 100;
+}
+
+.bgtop {
+  position: absolute;
+  width: 100%;
+  height: 88px;
+  border: 1px solid blue;
+  z-index: 10;
+}
+
+.bgbot {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 88px;
+  border: 1px solid blue;
+  z-index: 10;
+}
+
+.col {
+  height: 100%;
+  position: relative;
+  float: left;
+  text-align: center;
   cursor: pointer;
+  -webkit-mask-box-image: linear-gradient(to top,transparent,transparent 5%,#fff 30%,#fff 70%,transparent 95%,transparent);
+}
+
+.col .unit {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
 }
 
 .data {
   position: absolute;
   text-align: center;
   width: 100%;
-  /*font-size: 1rem;
-  line-height: 1rem;*/
-  top: 6.75rem;
-  cursor: pointer;
 }
 
-.data>div {
-  text-align: center;
-  touch-action: manipulation;
-  height: 1.5rem;
-  line-height: 1.5rem;
-  font-size: 1rem;
+.item {
+  height: 20px;
+  font-size: 20px;
+  line-height: 1;
+  color: #666;
+}
+
+.am-picker-active {
+  font-size: 22px;
+  color: red;
 }
